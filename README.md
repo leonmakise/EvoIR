@@ -82,23 +82,21 @@ $ProRes/datasets/
 ```
 
 ### Training
-Download pre-trained [MAE ViT-Large model](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_large.pth) and put it in the folder `./ProRes/pretrained_weights/`.
 
 ```shell
-sh scripts/train.sh
+python train.py
 ```
 
 
 
 ### Evaluation
-Download the [pretrained model](https://drive.google.com/file/d/1P-MGgYtXJR214rBCD_LNZYrfQwDbSWGJ/view?usp=sharing) and put it in the folder `./ProRes/models/prores_vitl_pretrained_sl1_mprnetprompt_add/`.
 
 Run the following command:
 ```shell
-sh eval_ours.sh
+python test.py
 ```
 
-
+<!--
 ## Experimental Results
 <!-- [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolop-you-only-look-once-for-panoptic-driving/traffic-object-detection-on-bdd100k)](https://paperswithcode.com/sota/traffic-object-detection-on-bdd100k?p=yolop-you-only-look-once-for-panoptic-driving) -->
 
@@ -226,10 +224,12 @@ sh eval_ours.sh
   </tr>
 </tbody>
 </table>
+**
+-->
 
 **Notes**: 
 - The works we used for reference including `Uformer`([paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Wang_Uformer_A_General_U-Shaped_Transformer_for_Image_Restoration_CVPR_2022_paper.pdf),[code](https://github.com/ZhendongWang6/Uformer)), `MPRNet`([paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Zamir_Multi-Stage_Progressive_Image_Restoration_CVPR_2021_paper.pdf),[code](https://github.com/swz30/MPRNet)), `MIRNet-v2`([paper](https://www.waqaszamir.com/publication/zamir-2022-mirnetv2/),[code](https://github.com/swz30/MIRNetv2)), `Restormer`([paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Zamir_Restormer_Efficient_Transformer_for_High-Resolution_Image_Restoration_CVPR_2022_paper.pdf),[code](https://github.com/swz30/Restormer)), `MAXIM`([paper](https://openaccess.thecvf.com//content/CVPR2022/papers/Tu_MAXIM_Multi-Axis_MLP_for_Image_Processing_CVPR_2022_paper.pdf),[code](https://github.com/google-research/maxim)) and `Painter`([paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Images_Speak_in_Images_A_Generalist_Painter_for_In-Context_Visual_CVPR_2023_paper.pdf),[code](https://github.com/baaivision/Painter)).
-- For both Painter and ProRes, we adopt ViT-Large with MAE pre-trained weights.
+
 - More experimental results are listed in the paper!
 ---
 
@@ -460,6 +460,7 @@ sh eval_ours.sh
 </tbody>
 </table> -->
 
+<!--
 ## Visualizations
 
 ### Control Ability
@@ -483,7 +484,7 @@ Visualization results of ProRes on the FiveK dataset. We adopt two settings, i.e
 #### 2. Dehazing Results
 Visualization results of ProRes on the RESIDE-6K dataset via prompt tuning for image dehazing (a new task).
 ![](figures/tuning_reside.jpg)
-
+-->
 
 
 
