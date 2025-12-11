@@ -1,0 +1,69 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 背景渐变（图片图标用） -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050816"></stop>
+      <stop offset="100%" stop-color="#111827"></stop>
+    </linearGradient>
+
+    <!-- 左边“退化”覆盖层 -->
+    <linearGradient id="degraded" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.55"></stop>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.0"></stop>
+    </linearGradient>
+
+    <!-- 低频波颜色 -->
+    <linearGradient id="waveLow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399"></stop>
+      <stop offset="100%" stop-color="#22c1c3"></stop>
+    </linearGradient>
+
+    <!-- 高频波颜色 -->
+    <linearGradient id="waveHigh" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fb923c"></stop>
+      <stop offset="100%" stop-color="#f97373"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- 只保留图标本身，透明背景 -->
+  <g transform="translate(16,16)">
+    <!-- 图片的圆角矩形框 -->
+    <rect x="0" y="0" width="224" height="224" rx="40" fill="url(#bg)"></rect>
+
+    <!-- 左半边的“退化”暗部 -->
+    <rect x="0" y="0" width="130" height="224" rx="40" fill="url(#degraded)"></rect>
+
+    <!-- 轻微的竖线纹理（表示噪声 / 雾霾等退化，可根据喜好删掉） -->
+    <g opacity="0.35">
+      <rect x="20" y="24" width="3" height="176" fill="#1f2933"></rect>
+      <rect x="40" y="24" width="3" height="176" fill="#1f2933"></rect>
+      <rect x="60" y="24" width="3" height="176" fill="#1f2933"></rect>
+      <rect x="80" y="24" width="3" height="176" fill="#1f2933"></rect>
+    </g>
+
+    <!-- 低频波（FMM 的低频分支） -->
+    <path d="M 20 150
+         C 60 110, 100 110, 140 150
+         S 200 190, 224 150" fill="none" stroke="url(#waveLow)" stroke-width="8" stroke-linecap="round"></path>
+
+    <!-- 高频波（FMM 的高频分支） -->
+    <path d="M 20 170
+         C 40 120, 60 220, 80 130
+         S 120 220, 140 140
+         S 190 210, 210 150
+         S 220 190, 224 160" fill="none" stroke="url(#waveHigh)" stroke-width="3" stroke-linecap="round"></path>
+
+    <!-- 右上角的小箭头（进化 / 优化方向） -->
+    <g transform="translate(180,28)">
+      <line x1="0" y1="16" x2="24" y2="0" stroke="#e5e7eb" stroke-width="2.4" stroke-linecap="round"></line>
+      <polygon points="24,0 16,2 20,8" fill="#e5e7eb"></polygon>
+    </g>
+
+    <!-- 底部三个小圆点，表示进化算法的“种群” -->
+    <g transform="translate(70,200)">
+      <circle cx="0" cy="0" r="4" fill="#f97316"></circle>
+      <circle cx="18" cy="0" r="4" fill="#4ade80"></circle>
+      <circle cx="36" cy="0" r="4" fill="#38bdf8"></circle>
+    </g>
+  </g>
+</svg>
